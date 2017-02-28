@@ -9,4 +9,11 @@
 		where id = #{id}
 	</select>
 
+	<insert id="insert" parameterType="com.qhf.entity.User">
+		<selectKey keyProperty="id" resultType="int" order="AFTER">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+		insert into t_user (name) values (#{name,jdbcType=VARCHAR})
+	</insert>
 </mapper>

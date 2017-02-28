@@ -13,17 +13,30 @@ import com.qhf.service.UserService;
 public class UserController {
 
 	@Autowired
-    private UserService userService;
-    @RequestMapping("/greeting")
-    @ResponseBody
-    public Object hello(){
-        return "Hello Spring";
-    }
-    
-    
-    @ResponseBody
-    @RequestMapping("/user")
-    public Object get(@RequestParam String id){
-        return userService.findOne(id);
-    }
+	private UserService userService;
+
+	@RequestMapping("/greeting")
+	@ResponseBody
+	public Object hello() {
+		return "Hello Spring";
+	}
+
+	@ResponseBody
+	@RequestMapping("/user")
+	public Object get(@RequestParam String id) {
+		return userService.findOne(id);
+	}
+
+	@ResponseBody
+	@RequestMapping("/insert")
+	public Object testinsert() {
+		try {
+			userService.insert();
+			return "success";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "fail";
+		}
+		
+	}
 }
