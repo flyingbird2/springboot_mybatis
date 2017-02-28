@@ -1,0 +1,36 @@
+# Server settings
+server:
+    port:8022
+    address:localhost
+
+# DATASOURCE
+jdbc:
+    dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&amp;charaterEncoding=utf-8
+    databaseName: springboot
+    serverName: 127.0.0.1
+    username: root
+    password: 1234
+    cachePrepStmts: true
+    prepStmtsSize: 250
+    prepStmtsCacheSqlLimit: 2048
+    userServerPrepStmts: true
+
+# SPRING PROFILES
+spring:       
+    # HTTP ENCODING
+    http:
+        encoding.charset: UTF-8
+        encoding.enable: true
+        encoding.force: true
+
+# MyBatis
+mybatis:
+    typeAliasesPackage: com.qhf.entity
+    mapperLocations: classpath:/com/qhf/mapper/*.xml
+    configLocation: classpath:/mybatis-config.xml
+
+# LOGGING
+logging:
+    level:
+       com.ibatis:DEBUG
