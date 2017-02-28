@@ -1,6 +1,6 @@
 # Server settings
 server:
-    port:8022
+    port:8080
     address:localhost
 
 # DATASOURCE
